@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpeg" href="/images/messenger_logo.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="/images/messenger_logo.png" alt="Messenger Logo" class="logo">
+        <div class="nav-links">
+            <div class="nav-item dropdown-container">
+                <button class="nav-link dropdown-btn" id="features-btn">Features ▾</button>
+                <div class="dropdown-menu" id="features-menu">
+                    <a href="https://www.messenger.com/features#useful" class="menu-card">
+                        <h4>Useful</h4>
+                        <p>Show up for your family and friends with everyday connection.</p>
+                        <span class="blue-arrow">➝</span>
+                    </a>
+
+                    <a href="https://www.messenger.com/features#social" class="menu-card">
+                        <h4>Social</h4>
+                        <p>Build community with people who share your passions and interests.</p>
+                        <span class="blue-arrow">➝</span>
+                    </a>
+
+                    <a href="https://www.messenger.com/features#expressive" class="menu-card">
+                        <h4>Expressive</h4>
+                        <p>Let your personality shine and express yourself beyond words.</p>
+                        <span class="blue-arrow">➝</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a href="https://www.messenger.com/privacy" class="nav-link">Privacy and Safety</a>
+        </div>
+
+        <div class="nav-item">
+            <a href="https://developers.facebook.com/products/messenger/" class="nav-link">For Developers</a>
+        </div>
+
+        <div class="nav-item">
+            <a href="https://www.messenger.com/help" class="nav-link">Help Center</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="left-section">
+            <h1 class="headline">A place for<br>meaningful<br>conversations</h1>
+            <p class="sub-text">Messenger helps you connect with your Facebook friends and family, build your community,
+                and deepen your interests.</p>
+
+            <form class="login-form">
+                <input type="text" placeholder="Email or phone number" required>
+                <input type="password" placeholder="Password" required>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-login">Log in</button>
+                    <a href="#" class="forgot-link" id="forgot-link">Forgotten your password?</a>
+                </div>
+
+                <div class="keep-signed-in">
+                    <input type="checkbox" id="keep-signed">
+                    <label for="keep-signed">Keep me signed in</label>
+                </div>
+            </form>
+        </div>
+
+        <div class="right-section">
+            <div class="image-placeholder">
+                <img src="/images/messenger_login_image.png" alt="App Preview">
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            <p>© Meta 2026</p>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.facebook.com/privacy/policy">Privacy Policy</a>
+            <a href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0">Cookie
+                Policy</a>
+            <a href="https://www.facebook.com/policies_center/">Terms</a>
+            <a href="#">English (US) ▼</a>
+            <div class="meta-brand">
+                <img src="/images/from-meta.png" alt="Meta" height="45px">
+            </div>
+        </div>
+    </footer>
+
+    <div id="forgot-modal" class="modal-overlay">
+        <div class="nav-modal-card">
+
+            <div class="nav-modal-header">
+                <h3>Forgotten your password?</h3>
+                <button class="nav-close-btn" onclick="closeModal()">✕</button>
+            </div>
+
+            <div class="nav-modal-body">
+                <a href="https://facebook.com" class="nav-action-row">
+                    <div class="nav-icon-circle fb-icon-bg">
+                        <svg viewBox="0 0 36 36" fill="currentColor" width="27" height="27"
+                            class="x14rh7hd x1lliihq x1tzjh5l" style="--x-color: var(--icon-primary-color);">
+                            <path
+                                d="M18 7c6.075 0 11 4.925 11 11 0 5.49-4.023 10.041-9.281 10.866V21.18h2.563L22.77 18h-3.051v-2.063c0-.87.426-1.718 1.792-1.718h1.387v-2.707s-1.258-.215-2.462-.215c-2.512 0-4.155 1.523-4.155 4.28V18h-2.793v3.18h2.793v7.686C11.023 28.041 7 23.49 7 18c0-6.075 4.925-11 11-11z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="nav-row-text">
+                        <span class="row-title">Go to Facebook.com</span>
+                        <span class="row-subtitle">If you use Messenger with Facebook, you can reset your password on Facebook.com.</span>
+                    </div>
+                    <span class="nav-arrow">›</span>
+                </a>
+            </div>
+
+            <div class="nav-modal-footer">
+                <div class="nav-static-row">
+                    <div class="nav-icon-circle mobile-icon-bg">
+                        <svg viewBox="0 0 36 36" fill="currentColor" width="27" height="27"
+                            class="x14rh7hd x1lliihq x1tzjh5l" style="--x-color: var(--icon-primary-color);">
+                            <path d="M15.75 24.5a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5z"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.5 9.5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-17zm3-.5h9a.5.5 0 0 1 .5.5v17a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-17a.5.5 0 0 1 .5-.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="nav-row-text">
+                        <span class="row-title">Open the Messenger app on a mobile device</span>
+                        <span class="row-subtitle">If you use Messenger without Facebook, you can reset your password
+                            using the Messenger app on a mobile device.
+                            <a href="https://www.messenger.com/help/863157058843539/" class="footer-link">Learn more.</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // --- 1. MODAL LOGIC ---
+        const modal = document.getElementById('forgot-modal');
+        const link = document.getElementById('forgot-link');
+
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // --- 2. DROPDOWN MENU LOGIC ---
+        const featuresBtn = document.getElementById('features-btn');
+        const featuresMenu = document.getElementById('features-menu');
+
+        featuresBtn.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevents the click from bubbling up and closing the menu
+            featuresMenu.classList.toggle('show'); // Toggles visibility
+            featuresBtn.classList.toggle('active'); // Toggles blue text style
+        });
+
+        // Close everything if clicking outside
+        window.onclick = function (event) {
+            // Close Modal
+            if (event.target == modal) {
+                closeModal();
+            }
+
+            // Close Dropdown Menu if clicking anywhere else
+            if (!featuresBtn.contains(event.target) && !featuresMenu.contains(event.target)) {
+                featuresMenu.classList.remove('show');
+                featuresBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
