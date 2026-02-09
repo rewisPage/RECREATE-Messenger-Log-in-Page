@@ -5,10 +5,18 @@
     box-sizing: border-box;
 }
 
+/* FONTS */
 @font-face {
     font-family: 'Facebook Sans';
     src: url('facebook-sans-fonts/FacebookSansRegular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Facebook Sans';
+    src: url('facebook-sans-fonts/FacebookSansSemiBold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -27,19 +35,32 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- 2. NAVBAR --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- 2. NAVBAR (STICKY) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    max-width: 1300px;
     margin: 0 auto;
+    padding: 20px max(40px, calc((100% - 1150px) / 2));
+
+    height: 100px;
+    max-width: 100%;
     width: 100%;
-    position: relative;
+    
+    /* STICKY ADDITION */
+    background-color: rgba(255, 255, 255, 0.98);
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -100,14 +121,14 @@ body {
     /* Hidden by default */
     position: absolute;
     top: 100%;
-    left: -725px;
+    left: -720px;
     top: 60px;
     /* Aligned with button */
 
     background-color: white;
     padding: 16px;
     border-radius: 12px;
-    width: 1250px;
+    width: 1350px;
     gap: 16px;
     border: none;
 
@@ -126,7 +147,7 @@ body {
 
 /* --- MENU CARDS SIZE --- */
 .menu-card {
-    background-color: #F7F9FA;
+    background-color: #f4f9fe;
     padding: 32px;
     border-radius: 12px;
     flex: 1;
@@ -178,27 +199,30 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1300px;
-    margin: 60px auto;
-    padding: 0 40px;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 30px 80px;
     flex-grow: 1;
+    gap: 20px;
 }
 
 .left-section {
     max-width: 600px;
+    top: -35px;
+    position: relative;
 }
 
 .headline {
     font-size: 80px;
-    line-height: 54px;
-    height: auto;
     line-height: 110%;
-    color: #0866ff;
     margin-bottom: 25px;
-    font-family: 'Facebook Sans', sans-serif;
     font-weight: 550;
     letter-spacing: -2px;
-    text-align: left;
+    background: #0866ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .sub-text {
@@ -208,7 +232,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* FORM */
 .login-form {
     display: flex;
     flex-direction: column;
@@ -280,9 +303,10 @@ body {
 }
 
 .image-placeholder img {
-    max-width: 100%;
+    max-width: 125%;
     height: auto;
 }
+
 
 /* --- 4. FOOTER --- */
 footer {
@@ -314,41 +338,7 @@ footer {
     margin-left: 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-    .dropdown-menu {
-        left: auto;
-        right: 0;
-        width: 600px;
-    }
-}
-
-@media (max-width: 900px) {
-    .main-content {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .headline {
-        font-size: 3rem;
-    }
-
-    .form-actions {
-        justify-content: center;
-    }
-
-    .login-form {
-        margin: 0 auto;
-    }
-
-    .dropdown-menu {
-        display: none !important;
-    }
-}
-
-/* --- EXACT REPLICA MODAL STYLES --- */
-
+/* --- MODAL --- */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -480,21 +470,105 @@ footer {
     margin-top: 8px;
 }
 
-.footer-link {
-    color: #0084FF;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
+/* --- 5. ALTERNATING BACKGROUNDS (New Wrapper System) --- */
+
+/* 1. The Full-Width Container */
+/* This wraps centered content to allow background color to span screen width */
+.feature-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. Alternating Color Logic */
+/* Every ODD wrapper (1st, 3rd...) inside the main container gets the grey background */
+.features-container .feature-wrapper:nth-of-type(odd) {
+    background-color: #f7f9fa; /* Messenger Light Grey */
+}
+
+/* 3. Features Page Layout */
+.feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 100px 40px;
+    max-width: 1200px;
+    width: 100%; /* Fills the wrapper */
+}
+
+/* 4. Reverse Modifier (Image Left) */
+.feature-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.feature-headline {
+    font-size:60px;
+    line-height: 1.1;
+    color: #1c1e21;
+    font-weight: 550;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.feature-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #65676b;
+}
+
+.feature-label {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: block;
+    color: #6a747e;
+}
+
+/* 5. Visual Column Styling */
+.feature-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-img {
+    width: 110%;
+    height: 110%;
+}
+
+/* --- HEADER SECTION SPECIFICS --- */
+/* Ensure Header wrapper is always white */
+.header-wrapper {
+    background-color: white; 
+}
+
+.header-section {
+    padding-top: 1px;
+    padding-bottom: 40px;
+}
+
+.header-title {
+    font-size: 80px;
+    line-height: 1.05;
+    color: #0866ff;
+    height: auto;
+    font-weight: 550;
+    letter-spacing: -2px;
+}
+
+.header-img {
+    max-width: 650px;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
 }
