@@ -1,4 +1,3 @@
-/* --- 1. RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +42,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- 2. NAVBAR (STICKY) --- */
+/* NAVBAR (STICKY) */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -115,7 +114,7 @@ html {
     border-bottom: 2px solid #0084FF;
 }
 
-/* --- UPDATED: MEGA MENU (CLICK-BASED) --- */
+/* MENU (CLICK-BASED) */
 .dropdown-menu {
     display: none;
     /* Hidden by default */
@@ -145,7 +144,7 @@ html {
     transform: translateY(0);
 }
 
-/* --- MENU CARDS SIZE --- */
+/* MENU CARDS SIZE */
 .menu-card {
     background-color: #f4f9fe;
     padding: 32px;
@@ -158,7 +157,7 @@ html {
     cursor: pointer;
     min-height: 180px;
 
-    /* NEW LINES TO HANDLE LINK STYLES */
+    /* HANDLE LINK STYLES */
     text-decoration: none;
     /* Removes the underline from the link */
     color: inherit;
@@ -167,12 +166,9 @@ html {
     /* Ensures the link behaves like a box */
 }
 
-/* (The hover effect stays the same) */
 .menu-card:hover {
     background-color: #EBF5FF;
 }
-
-/* (Your existing h4, p, and arrow styles will continue to work automatically) */
 
 .menu-card h4 {
     font-size: 1.5rem;
@@ -194,7 +190,7 @@ html {
     font-size: 1.4rem;
 }
 
-/* --- 3. MAIN CONTENT --- */
+/* MAIN CONTENT */
 .main-content {
     display: flex;
     justify-content: space-between;
@@ -308,7 +304,7 @@ html {
 }
 
 
-/* --- 4. FOOTER --- */
+/* FOOTER */
 footer {
     display: flex;
     justify-content: space-between;
@@ -338,7 +334,7 @@ footer {
     margin-left: 20px;
 }
 
-/* --- MODAL --- */
+/* NAVIGATIONAL MODAL */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -366,7 +362,7 @@ footer {
     font-family: inherit;
 }
 
-/* --- HEADER --- */
+/* MODAL HEADER */
 .nav-modal-header {
     display: flex;
     justify-content: space-between;
@@ -405,7 +401,7 @@ footer {
     background-color: #d8dadf;
 }
 
-/* --- ROW STYLES --- */
+/* MODAL ROW STYLES */
 .nav-action-row,
 .nav-static-row {
     display: flex;
@@ -470,9 +466,7 @@ footer {
     margin-top: 8px;
 }
 
-/* --- 5. ALTERNATING BACKGROUNDS (New Wrapper System) --- */
-
-/* 1. The Full-Width Container */
+/* ALTERNATING BACKGROUNDS*/
 /* This wraps centered content to allow background color to span screen width */
 .feature-wrapper {
     width: 100%;
@@ -480,13 +474,12 @@ footer {
     justify-content: center;
 }
 
-/* 2. Alternating Color Logic */
 /* Every ODD wrapper (1st, 3rd...) inside the main container gets the grey background */
 .features-container .feature-wrapper:nth-of-type(odd) {
     background-color: #f7f9fa; /* Messenger Light Grey */
 }
 
-/* 3. Features Page Layout */
+/* Features Page Layout */
 .feature-row {
     display: flex;
     align-items: center;
@@ -494,10 +487,10 @@ footer {
     gap: 80px;
     padding: 100px 40px;
     max-width: 1200px;
-    width: 100%; /* Fills the wrapper */
+    width: 100%;
 }
 
-/* 4. Reverse Modifier (Image Left) */
+/* Reverse Modifier (Image Left) */
 .feature-row.reverse {
     flex-direction: row-reverse;
 }
@@ -532,7 +525,7 @@ footer {
     color: #6a747e;
 }
 
-/* 5. Visual Column Styling */
+/* Visual Column Styling */
 .feature-visual {
     flex: 1;
     display: flex;
@@ -544,7 +537,7 @@ footer {
     height: 110%;
 }
 
-/* --- HEADER SECTION SPECIFICS --- */
+/* HEADER SECTION SPECIFICS */
 /* Ensure Header wrapper is always white */
 .header-wrapper {
     background-color: white; 
